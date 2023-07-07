@@ -1,13 +1,28 @@
 ---
-import Header from '../components/Header.astro';
-import Mensaje from '../components/Mensaje.astro';
-import Layout from '../layouts/Layout.astro';
+import IconProgramming from "../components/icons/IconProgramming.astro";
+import PageLayout from "../layouts/PageLayout.astro";
+
+const canonical = new URL(`/`, Astro.site);
+
+const title = "Juan Gomez";
+const description = "Sometimes I write code. Other times, I rewrite code until it works perfectly.";
 ---
 
-<Layout title="Developer">
-	<Header/>
-</Layout>
+<PageLayout meta={{ title, description, canonical }}>
+  <main>
+    <section class="scroll-mt-16">
+      <div class="px-4 py-16 mx-auto max-w-6xl lg:px-8 lg:py-20">
+        <IconProgramming />
 
-<style>
-	
-</style>
+        <h1 class="text-5xl font-bold leading-tighter tracking-tighter my-4 text-center">
+          Hey there 👋 I'm Juan Carlos Gomez
+        </h1>
+
+        <p class="text-xl text-gray-600 mb-8 dark:text-slate-400 text-center">
+          I am in my last semester of telematics engineering at Universidad Distrital, I am a
+          passionate and dedicated software developer focused on web development.
+        </p>
+      </div>
+    </section>
+  </main>
+</PageLayout>
