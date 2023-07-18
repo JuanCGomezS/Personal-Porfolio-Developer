@@ -1,0 +1,172 @@
+---
+import { Icon } from "astro-icon";
+import Technologies from "../components/Technologies.astro";
+import PageLayout from "../layouts/PageLayout.astro";
+
+const canonical = new URL(`about`, Astro.site);
+
+const title = "Dev Juan Gomez";
+const description = "Sometimes I write code. Other times, I write code with coffee.";
+
+const present = {
+  icon: "mdi:account-tie-outline",
+  name: "Full Stack Developer",
+  content:
+    "As a software developer, I am a person of integrity, committed and disciplined with an entrepreneurial mindset. My strong teamwork skills are complemented by my willingness to acquire new knowledge. I am passionate about learning new things every day and studying independently. I have a solid academic background, being a Technologist in Data Systematization at the Universidad Distrital Francisco José de Caldas and currently a student of Telematics Engineering at the same institution. My knowledge is based on what I have learned at the university, as well as on my professional experience.",
+};
+
+const steps = [
+  {
+    icon: "mdi:work",
+    name: "Web Developer / Solredes SAS",
+    date: "Aug 2020 - Sep 2021",
+    content:
+      "I focused primarily on frontend development. During this period, I worked with a variety of frameworks and programming languages, including JSF, Angular, React and Flutter, as well as Java, JavaScript, TypeScript, HTML, XHTML, CSS and SCSS. In addition, I used design libraries such as Angular Material, PrimeNG, PrimeFaces and PrimeReact, and databases such as MySql, PostgreSQL and Oracle.",
+  },
+  {
+    icon: "mdi:work",
+    name: "Full Stack Developer / CPR Servicios y Consultoría SAS",
+    date: "Sep 2021 - Currently",
+    content:
+      "In this role, I am working with Angular, Node.js and .NET frameworks, using JavaScript, TypeScript, HTML and SCSS programming languages. In addition, I employ design libraries such as Angular Material, DevExtreme and Bootstrap, MySQL databases and other tools such as AWS (S3, EC2), Jenkins, SonarQube, Jira, HeidiSql and Slack.",
+  },
+];
+
+const today = new Date();
+const birthDate = new Date("09/03/1999");
+
+let age = today.getFullYear() - birthDate.getFullYear();
+const monthDiff = today.getMonth() - birthDate.getMonth();
+
+if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+  age--;
+}
+---
+
+<PageLayout meta={{ title, description, canonical }}>
+  <main>
+    <section class="py-8 sm:py-16 lg:py-20 mx-auto">
+      <div
+        class="container mx-auto px-4 sm:px-6 max-w-3xl prose prose-lg lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8"
+      >
+        <figure
+          class="p-4 italic border-l-4 bg-neutral-100 text-gray-500 dark:text-white border-neutral-500 quote dark:bg-gray-800 shadow-xl hover:shadow-lg transition"
+        >
+          <p>Sometimes I write code. Other times, I rewrite code until it works perfectly.</p>
+          <figcaption class="text-right">— Juan Carlos Gomez</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-6xl">
+      <div class="grid gap-6 row-gap-10 md:grid-cols-2">
+        <div class="md:py-6 md:pr-16 text-gray-700 dark:text-gray-400">
+          <div class="flex">
+            <div class="flex flex-col items-center mr-4">
+              <div>
+                <div
+                  class="flex items-center justify-center w-10 h-10 rounded-full border-blue-500 border-2"
+                >
+                  <Icon
+                    name={present.icon}
+                    class="w-6 h-6 text-gray-600 dark:text-slate-200 icon-bold"
+                  />
+                </div>
+              </div>
+              {present.content && <div class="w-px h-full bg-gray-300 dark:bg-slate-500" />}
+            </div>
+            <div class="pt-1 pb-8">
+              <p class="mb-2 text-xl font-bold text-gray-900 dark:text-slate-300">
+                {present.name}
+              </p>
+              <p class="text-gray-600 mb-8 dark:text-slate-400 text-justify">
+                {present.content}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <img
+            src="./src/assets/me.jpg"
+            alt="My Portrait"
+            class="inset-0 object-cover object-top w-50 rounded-md shadow-lg absolute h-full dark:brightness-75"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <div class="grid md:grid-cols-2 gap-6 row-gap-10">
+        <div class="md:pr-16 text-gray-700 dark:text-gray-400">
+          <p class="mb-2 text-xl font-bold text-gray-900 dark:text-slate-300">LOCATION</p>
+          <p class="text-gray-600 mb-8 dark:text-slate-400 text-justify">
+            I currently reside in Bogota, the capital of Colombia. At {age} years old, I find myself
+            in this city full of history, culture and opportunities.
+          </p>
+          <iframe
+            class="location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.286808828485!2d-74.10568994999899!3d4.563766596003027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9d5f3dbd4f13%3A0xa2f3b44ddc4df9ab!2sSan%20Crist%C3%B3bal%2C%20Bogot%C3%A1%2C%20Cundinamarca%2C%20Colombia!5e0!3m2!1sen!2sus!4v1623050847556!5m2!1sen!2sus"
+            allowfullscreen=""
+            loading="lazy"
+          >
+          </iframe>
+        </div>
+        <div class="md:pr-16 text-gray-700 dark:text-gray-400">
+          <p class="mb-2 text-xl font-bold text-gray-900 dark:text-slate-300">WORK EXPERIENCE</p>
+          {
+            steps.map((step) => (
+              <div class="flex pr-8">
+                <div class="flex flex-col items-center mr-4">
+                  <div>
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-blue-500 border-2">
+                      <Icon
+                        name={step.icon}
+                        class="w-6 h-6 text-gray-600 dark:text-slate-200 icon-bold"
+                      />
+                    </div>
+                  </div>
+                  {step.content && <div class="w-px h-full bg-gray-300 dark:bg-slate-500" />}
+                </div>
+                <div class="pt-1 pb-8">
+                  <p class="mb-2 text-xl font-bold text-gray-900 dark:text-slate-300">
+                    {step.name}
+                  </p>
+                  <figcaption class="text-right">{step.date}</figcaption>
+                  <p class="text-gray-600 mb-8 dark:text-slate-400 text-justify">{step.content}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+    <Technologies />
+  </main>
+</PageLayout>
+
+<style>
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .container > div {
+    flex: 1 1 50%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .location {
+    padding-top: 15px;
+    height: 450px;
+    width: 100%;
+    border-radius: 10%;
+  }
+
+  @media (max-width: 768px) {
+    .container > div {
+      flex-basis: 100%;
+    }
+  }
+</style>
