@@ -9,10 +9,10 @@ import rehypePrettyCode from "rehype-pretty-code";
 import { remarkReadingTime } from "./plugins/remark-reading-time.mjs";
 
 async function fetchTheme(name) {
-  const res = await fetch(
+  /* const res = await fetch(
     `https://raw.githubusercontent.com/shikijs/shiki/main/packages/shiki/themes/${name}.json`
   );
-  return await res.json();
+  return await res.json(); */
 }
 
 const dark = await fetchTheme("github-dark");
@@ -43,7 +43,7 @@ const options = {
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://www.davidhu.io",
+  site: "https://www.juangomez.io",
   integrations: [
     mdx(),
     sitemap(),

@@ -563,9 +563,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@davidhu/blog@workspace:.":
+"@juangomez/blog@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@davidhu/blog@workspace:."
+  resolution: "@juangomez/blog@workspace:."
   dependencies:
     "@astrojs/image": ^0.14.1
     "@astrojs/mdx": ^0.16.0

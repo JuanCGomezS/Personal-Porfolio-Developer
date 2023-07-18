@@ -2,7 +2,7 @@ import { defineConfig } from "cypress";
 
 export default defineConfig({
   e2e: {
-    baseUrl: "https://www.davidhu.io",
+    baseUrl: "https://www.juangomez.io",
     blockHosts: ["*.googletagmanager.com", "*.googlesyndication.com"],
     setupNodeEvents(on, config) {
       // implement node event listeners here
