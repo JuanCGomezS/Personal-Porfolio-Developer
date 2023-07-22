@@ -1,8 +1,6 @@
 ---
+import Icon from "astro-icon";
 import Logo from "./Logo.astro";
-import IconGithub from "./icons/IconGithub.astro";
-import IconMenu from "./icons/IconMenu.astro";
-import IconSun from "./icons/IconSun.astro";
 
 const {} = Astro.props;
 
@@ -12,11 +10,11 @@ const links = [
   {
     name: "Home",
     href: "/",
-  },
+  } /* 
   {
     name: "Projects",
     href: "/projects",
-  },
+  }, */,
   {
     name: "About",
     href: "/about",
@@ -43,14 +41,14 @@ const links = [
           aria-label="Toggle between Dark and Light mode"
           data-aw-toggle-color-scheme
         >
-          <IconSun class="w-6 h-6" />
+          <Icon name="ph:sun" class="w-6 h-6" />
         </button>
         <button
           class="ml-1.5 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center transition"
           aria-label="Toggle Menu"
           data-aw-toggle-menu
         >
-          <IconMenu class="w-6 h-6" />
+          <Icon name="ic:round-menu" class="w-6 h-6" />
         </button>
       </div>
     </div>
@@ -89,11 +87,11 @@ const links = [
         <div class="hidden items-center md:flex">
           <button
             type="button"
-            class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+            class="mx-2 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
             aria-label="Toggle between Dark and Light mode"
             data-aw-toggle-color-scheme
           >
-            <IconSun />
+            <Icon name="ph:sun" class="w-5 h-5" />
           </button>
           <a
             href={githubUrl}
@@ -101,7 +99,7 @@ const links = [
             aria-label="Personal Github"
             target="_blank"
           >
-            <IconGithub />
+            <Icon name="iconoir:github" class="w-5 h-5" />
           </a>
         </div>
       </div>
