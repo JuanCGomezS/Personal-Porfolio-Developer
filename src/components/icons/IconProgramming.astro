@@ -1,45 +1,15 @@
----
----
+<section class="relative lg:w-2/4 mx-auto rounded-md overflow-hidden">
+  <video id="myVideo" autoplay loop muted>
+    <source src="/background.webm" type="video/webm" />
+  </video>
 
-<section>
-  <div class="video-container">
-    <video id="myVideo" src="./src/assets/background.mp4" autoplay loop></video>
-    <div class="logo"><img src="./src/assets/juanGomez.png" alt="" /></div>
-  </div>
+  <img
+    class="absolute w-52 bottom-0 left-2/4 -translate-x-2/4"
+    src="./src/assets/juanGomez.png"
+    alt="Logo"
+  />
 </section>
 
-<script>
-  const video = document.getElementById("myVideo") as HTMLVideoElement;
-  video.playbackRate = 0.5;
+<script is:inline>
+document.querySelector("#myVideo").playbackRate = 0.5;
 </script>
-
-<style>
-  section {
-    position: relative;
-  }
-
-  .video-container {
-    position: relative;
-    width: 70%;
-    margin: 0 auto;
-    text-align: center;
-    border-radius: 5%;
-    overflow: hidden;
-  }
-
-  .video-container video {
-    width: 100%;
-  }
-
-  .logo {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-  }
-
-  .logo img {
-    width: 200px;
-  }
-</style>
