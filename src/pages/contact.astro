@@ -4,8 +4,7 @@ import Icon from "astro-icon";
 import { socialLinks } from "../data/socialLinks";
 import PageLayout from "../layouts/PageLayout.astro";
 
-const canonical = null; //new URL(`contact`, Astro.site);
-console.log(new URL(`contact`, Astro.site));
+const canonical = new URL(`contact`, Astro.site);
 
 const title = "Contact Juan Gomez";
 const description = "Here are my contact info.";
