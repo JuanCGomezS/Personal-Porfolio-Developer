@@ -9,7 +9,8 @@ module.exports = {
         sans: ['"Roboto"', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        custom: '#bf5a1c',
+        custom: "#bf5a1c",
+        button: "#3b82f6",
       },
     },
   },
