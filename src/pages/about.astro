@@ -45,10 +45,11 @@ if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate()))
 
 <PageLayout meta={{ title, description, canonical }}>
   <main>
-    <section class="py-8 sm:py-16 lg:py-20 mx-auto">
+    <section class="h-screen flex items-center justify-center py-8 sm:py-16 lg:py-20 mx-auto">
       <div
         class="container mx-auto px-4 sm:px-6 max-w-3xl prose prose-lg lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8"
       >
+        <img class="w-52" src="/img/fondo.png" alt="Logo" />
         <figure
           class="p-4 italic border-l-4 bg-neutral-100 text-gray-500 dark:text-white border-neutral-500 quote dark:bg-gray-800 shadow-xl hover:shadow-lg transition"
         >
@@ -82,6 +83,14 @@ if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate()))
               <p class="text-gray-600 mb-8 dark:text-slate-400 text-justify">
                 {present.content}
               </p>
+
+              <a href="https://docsdeveloper.s3.amazonaws.com/CV+JUAN+GOMEZ.pdf" target="_blank">
+                <button
+                  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                >
+                  See cv in pdf
+                </button>
+              </a>
             </div>
           </div>
         </div>
