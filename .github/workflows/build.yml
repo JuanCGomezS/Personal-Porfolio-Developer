@@ -14,4 +14,4 @@ jobs:
       - name: Install, build, and upload artifact
         uses: withastro/action@v0
         with:
-          package-manager: yarn
+          package-manager: pnpm
