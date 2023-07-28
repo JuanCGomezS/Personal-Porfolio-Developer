@@ -22,7 +22,7 @@ const options = {
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://JuanCGomezS.github.io",
+  site: "https://juancgomezs.github.io",
   integrations: [
     mdx(),
     sitemap(),
