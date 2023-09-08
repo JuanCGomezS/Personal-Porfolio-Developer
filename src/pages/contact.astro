@@ -3,14 +3,22 @@ import Icon from "astro-icon";
 
 import { socialLinks } from "../data/socialLinks";
 import PageLayout from "../layouts/PageLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 const canonical = new URL(`contact`, Astro.site);
 
 const title = "Contact Juan Gomez";
 const description = "Here are my contact info.";
+
+let { showHeaderAndFooter } = Astro.props;
+if (showHeaderAndFooter == undefined) {
+  showHeaderAndFooter = true;
+}
 ---
 
 <PageLayout meta={{ title, description, canonical }}>
+  {showHeaderAndFooter && <Header />}
   <main>
     <section>
       <div class="max-w-6xl mx-auto px-4 sm:px-6 overflow-hidden">
@@ -62,4 +70,5 @@ const description = "Here are my contact info.";
       </div>
     </section>
   </main>
+  {showHeaderAndFooter && <Footer />}
 </PageLayout>

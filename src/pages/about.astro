@@ -2,6 +2,8 @@
 import { Icon } from "astro-icon";
 import Technologies from "../components/Technologies.astro";
 import PageLayout from "../layouts/PageLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 const canonical = new URL(`about`, Astro.site);
 
@@ -41,15 +43,25 @@ const monthDiff = today.getMonth() - birthDate.getMonth();
 if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
   age--;
 }
+
+let { showHeaderAndFooter } = Astro.props;
+if (showHeaderAndFooter == undefined) {
+  showHeaderAndFooter = true;
+}
+
+console.log(showHeaderAndFooter);
 ---
 
 <PageLayout meta={{ title, description, canonical }}>
+  {showHeaderAndFooter && <Header />}
   <main>
     <section class="h-screen flex items-center justify-center py-8 sm:py-16 lg:py-20 mx-auto">
       <div
         class="container mx-auto px-4 sm:px-6 max-w-3xl prose prose-lg lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8"
       >
-        <img class="w-52" src="/img/fondo.png" alt="Logo" />
+        <video id="myVideo" class="mt-4 rounded-md" autoplay loop muted>
+          <source src="/img/fondo.webm" type="video/webm" />
+        </video>
         <figure
           class="p-4 italic border-l-4 bg-neutral-100 text-gray-500 dark:text-white border-neutral-500 quote dark:bg-gray-800 shadow-xl hover:shadow-lg transition"
         >
@@ -151,6 +163,7 @@ if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate()))
     </section>
     <Technologies />
   </main>
+  {showHeaderAndFooter && <Footer />}
 </PageLayout>
 
 <style>
@@ -171,6 +184,13 @@ if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate()))
     height: 450px;
     width: 100%;
     border-radius: 10%;
+  }
+
+  #myVideo {
+    width: 50%;
+    height: auto;
+    margin: 0;
+    opacity: 0.8;
   }
 
   @media (max-width: 768px) {

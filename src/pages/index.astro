@@ -1,6 +1,10 @@
 ---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 import IconProgramming from "../components/icons/IconProgramming.astro";
 import PageLayout from "../layouts/PageLayout.astro";
+import About from "./about.astro";
+import Contact from "./contact.astro";
 
 const canonical = new URL(`/`, Astro.site);
 
@@ -9,6 +13,7 @@ const description = "Sometimes I write code. Other times, I rewrite code until i
 ---
 
 <PageLayout meta={{ title, description, canonical }}>
+  <Header />
   <section class="flex flex-col justify-center m-auto">
     <IconProgramming />
 
@@ -20,4 +25,9 @@ const description = "Sometimes I write code. Other times, I rewrite code until i
       and dedicated software developer focused on web development.
     </p>
   </section>
+
+  <About showHeaderAndFooter={false} />
+  <Contact showHeaderAndFooter={false} />
+
+  <Footer />
 </PageLayout>
