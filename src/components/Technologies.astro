@@ -5,82 +5,102 @@ const items = [
   {
     title: "Scrum",
     icon: "mdi:calendar",
+    percent: "85%",
   },
   {
     title: "Angular",
     icon: "mdi:angularjs",
+    percent: "80%",
   },
   {
     title: "ReactJS",
     icon: "fa-brands:react",
+    percent: "60%",
   },
   {
     title: "Bootstrap",
     icon: "bi:bootstrap",
+    percent: "70%",
   },
   {
     title: "NodeJS",
     icon: "mdi:nodejs",
+    percent: "80%",
   },
   {
     title: "Spring Boot",
     icon: "simple-icons:springboot",
+    percent: "65%",
   },
   {
     title: ".NET Core",
     icon: "mdi:dot-net",
+    percent: "70%",
   },
   {
     title: "JSF",
     icon: "fa-brands:java",
+    percent: "60%",
   },
   {
     title: "Git",
     icon: "fa-brands:git-alt",
+    percent: "82%",
   },
   {
     title: "GitHub",
     icon: "fa-brands:github",
+    percent: "80%",
   },
   {
     title: "GitLab",
     icon: "mdi:gitlab",
+    percent: "66%",
   },
   {
     title: "Bitbucket",
     icon: "ion:logo-bitbucket",
+    percent: "79%",
   },
   {
     title: "Typescript",
     icon: "mdi:language-typescript",
+    percent: "77%",
   },
   {
     title: "JavaScript",
     icon: "mdi:language-javascript",
+    percent: "85%",
   },
   {
     title: "HTML",
     icon: "icon-park-outline:html-five",
+    percent: "81%",
   },
   {
     title: "CSS - SCSS",
     icon: "iconoir:css3",
+    percent: "75%",
   },
   {
     title: "Visual Studio",
     icon: "mdi:microsoft-visual-studio",
+    percent: "65%",
   },
   {
     title: "VS Code",
     icon: "akar-icons:vscode-fill",
+    percent: "79%",
   },
   {
     title: "Jenkins",
     icon: "fa-brands:jenkins",
+    percent: "45%",
   },
   {
     title: "SonarQube",
     icon: "simple-icons:sonarqube",
+    percent: "50%",
   },
 ];
 ---
@@ -94,9 +114,7 @@ const items = [
         <p class="text-base text-blue-600 dark:text-blue-200 font-semibold tracking-wide uppercase">
           Technology
         </p>
-        <h2 class="text-3xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4">
-          Skills
-        </h2>
+        <h2 class="text-3xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4">Skills</h2>
         <p class="max-w-3xl mx-auto text-center text-gray-600 dark:text-slate-400">
           Icons provided by <a
             class="inline-block p-0 underline"
@@ -106,11 +124,15 @@ const items = [
       </div>
       <div class="grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-start dark:text-white">
         {
-          items.map(({ title, icon }) => (
+          items.map(({ title, icon, percent }) => (
             <div class="relative flex flex-col p-3 bg-white dark:bg-slate-900 rounded shadow-xl hover:shadow-lg transition">
               <div class="flex items-center">
                 <Icon name={icon} class="w-12 h-12" />
                 <div class="ml-4 text-lg leading-5 font-bold">{title}</div>
+              </div>
+              <div class="hr-container">
+                <hr class="hr-style-red" />
+                <hr class="hr-style" style={`width: ${percent}; --percent: ${percent};`} />
               </div>
             </div>
           ))
@@ -119,3 +141,37 @@ const items = [
     </div>
   </div>
 </section>
+
+<style>
+  .hr-container {
+    position: relative;
+  }
+  .hr-style {
+    margin: 8px;
+    background-color: #3b82f6;
+    height: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    animation: loadAnimation 2s linear forwards;
+    border-radius: 2.5px;
+  }
+  .hr-style-red {
+    margin: 8px;
+    background-color: #bf5a1c;
+    height: 5px;
+    width: 95%;
+    border-radius: 2.5px;
+    opacity: 0.7;
+  }
+
+  @keyframes loadAnimation {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: var(--percent);
+    }
+  }
+</style>
