@@ -10,6 +10,8 @@ Este proyecto ha sido desarrollado utilizando [Astro](https://astro.build/) y [R
 
 El sitio está alojado en [GitHub Pages](https://pages.github.com/). Puedes ver la versión en vivo [aquí](https://juancgomezs.github.io/).
 
+![portfolio](https://github.com/JuanCGomezS/juancgomezs.github.io/assets/76191481/abb31ff3-989b-4157-9894-dd4c2a34cc1c)
+
 ## Cómo Correr el Proyecto Localmente
 
 1. Clona el repositorio a tu máquina local usando `git clone https://github.com/JuanCGomezS/juancgomezs.github.io.git`.
