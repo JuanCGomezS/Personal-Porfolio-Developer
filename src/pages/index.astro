@@ -5,6 +5,7 @@ import IconProgramming from "../components/icons/IconProgramming.astro";
 import PageLayout from "../layouts/PageLayout.astro";
 import About from "./about.astro";
 import Contact from "./contact.astro";
+import Projects from "./projects.astro";
 
 const canonical = new URL(`/`, Astro.site);
 
@@ -27,6 +28,7 @@ const description = "Sometimes I write code. Other times, I rewrite code until i
   </section>
 
   <About showHeaderAndFooter={false} />
+  <Projects showHeaderAndFooter={false} />
   <Contact showHeaderAndFooter={false} />
 
   <Footer />
