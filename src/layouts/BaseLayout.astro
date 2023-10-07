@@ -14,6 +14,7 @@ const { meta = {} } = Astro.props;
     <script is:inline>
       const classList = document.documentElement.classList;
       const localStorageTheme = localStorage.getItem("theme");
+      const localStorageTranslate = localStorage.getItem("translate");
 
       if (
         localStorageTheme === "dark" ||
@@ -22,6 +23,12 @@ const { meta = {} } = Astro.props;
         classList.add("dark");
       } else {
         classList.remove("dark");
+      }
+
+      if (localStorageTranslate === "es") {
+        classList.add("es");
+      } else {
+        classList.remove("es");
       }
     </script>
   </head>

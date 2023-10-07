@@ -1,0 +1,66 @@
+{
+  "about": {
+    "title": "Acerca de Juan Gomez",
+    "description": "A veces escribo código. Otras veces, reescribo el código hasta que funciona perfectamente.",
+    "present": {
+      "name": "Desarrollador Full Stack",
+      "content": "Como desarrollador de software, mi integridad y disciplina se complementan con una mentalidad emprendedora. Mi capacidad para trabajar en equipo se equilibra con un constante deseo de aprender y crecer. me apasiona la mejora personal y estudio por mi cuenta todos los días."
+    },
+    "seepdf": "Ver pdf",
+    "item1": "ESTUDIOS",
+    "item2": "EXPERIENCIA LABORAL",
+    "work": {
+      "synergias": {
+        "name": "Desarrollador Full Stack / Synergias",
+        "date": "Jul 2023 - Actualmente",
+        "content": "En mi rol, uso la metodología Scrum y desarrollé el backend con el framework .NET en C#. Para el frontend, uso React y SQLServer para la gestión de la base de datos."
+      },
+      "cpr": {
+        "name": "Desarrollador Full Stack / CPR Servicios y Consultoría SAS",
+        "date": "Sep 2021 - Jul 2023",
+        "content": "En CPR, utilicé frameworks como Angular, Node.js y .NET, con lenguajes como JavaScript, TypeScript, HTML y SCSS. Utilicé librerías de diseño como Angular Material, DevExtreme y Bootstrap, y bases de datos MySQL. También trabajé con herramientas como AWS (S3, EC2), Jenkins, SonarQube, Jira, HeidiSql y Slack."
+      },
+      "solredes": {
+        "name": "Desarrollador Web / Solredes SAS",
+        "date": "Ago 2020 - Sep 2021",
+        "content": "Me centré principalmente en el desarrollo frontend. Durante este período, trabajé con una variedad de frameworks y lenguajes de programación, incluyendo JSF, Angular, React y Flutter, así como Java, JavaScript, TypeScript, HTML, XHTML, CSS y SCSS. Además, utilicé librerías de diseño como Angular Material, PrimeNG, PrimeFaces y PrimeReact, y bases de datos como MySQL, PostgreSQL y Oracle."
+      }
+    },
+    "education": {
+      "ing": {
+        "name": "Ingeniería Telemática",
+        "date": "2021 - Actualmente",
+        "content": "Universidad Distrital Francisco José de Caldas \n Actualmente trabajando en un proyecto de grado"
+      },
+      "c_react": {
+        "name": "Certificación React.js"
+      },
+      "c_angular": {
+        "name": "Certificación Autenticación con Angular"
+      },
+      "c_scrum": {
+        "name": "Certificación Curso Profesional de Scrum"
+      },
+      "tec": {
+        "name": "Tecnólogo en Sistematización de Datos",
+        "content": "Universidad Distrital Francisco José de Caldas"
+      },
+      "sena": {
+        "name": "Técnico en contabilidad"
+      }
+    },
+    "titleTecno": "TECNOLOGÍAS",
+    "skills": "Habilidades"
+  },
+  "header": {
+    "home": "Inicio",
+    "about": "Acerda de",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "index": {
+    "title": "Hola 👋",
+    "subtitle": "Soy Juan Carlos Gómez",
+    "description": "Estoy cursando el último semestre de ingeniería telemática en la Universidad Distrital, soy un apasionado y dedicado desarrollador de software enfocado en el desarrollo web."
+  }
+}

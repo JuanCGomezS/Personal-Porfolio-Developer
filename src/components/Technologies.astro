@@ -1,5 +1,19 @@
 ---
 import { Icon } from "astro-icon";
+import i18n from "../i18n.js";
+
+const cookies = Astro.request.headers.get("cookie") || "";
+
+if (cookies) {
+  const language = cookies
+    ?.split("; ")
+    .find((row) => row.startsWith("translate="))
+    ?.split("=")[1];
+  i18n.changeLanguage(language);
+}
+
+const title = i18n.t("about.titleTecno");
+const skills = i18n.t("about.skills");
 
 const items = [
   {
@@ -112,12 +126,15 @@ const items = [
     <div class="py-4 pt-8 sm:py-6 lg:py-8 lg:pt-12">
       <div class="mb-8 text-center">
         <p class="text-base text-blue-600 dark:text-blue-200 font-semibold tracking-wide uppercase">
-          Technology
+          {title}
         </p>
-        <h2 class="text-3xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4">Skills</h2>
+        <h2 class="text-3xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4">
+          {skills}
+        </h2>
         <p class="max-w-3xl mx-auto text-center text-gray-600 dark:text-slate-400">
           Icons provided by <a
             class="inline-block p-0 underline"
+            target="_blank"
             href="https://icon-sets.iconify.design/logos/bash-icon/">Iconify</a
           >
         </p>

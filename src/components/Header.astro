@@ -1,6 +1,17 @@
 ---
 import Icon from "astro-icon";
 import Logo from "./Logo.astro";
+import i18n from "../i18n.js";
+
+const cookies = Astro.request.headers.get("cookie") || "";
+
+if (cookies) {
+  const language = cookies
+    ?.split("; ")
+    .find((row) => row.startsWith("translate="))
+    ?.split("=")[1];
+  i18n.changeLanguage(language);
+}
 
 const {} = Astro.props;
 
@@ -8,19 +19,19 @@ const githubUrl = "https://github.com/JuanCGomezS";
 
 const links = [
   {
-    name: "Home",
+    name: i18n.t("header.home"),
     href: "/",
   },
   {
-    name: "About",
+    name: i18n.t("header.about"),
     href: "/about",
   },
   {
-    name: "Projects",
+    name: i18n.t("header.projects"),
     href: "/projects",
   },
   {
-    name: "Contact",
+    name: i18n.t("header.contact"),
     href: "/contact",
   },
 ];
@@ -92,6 +103,14 @@ const links = [
             data-aw-toggle-color-scheme
           >
             <Icon name="ph:sun" class="w-5 h-5" />
+          </button>
+          <button
+            type="button"
+            class="mx-2 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+            aria-label="Toggle between Dark and Light mode"
+            data-aw-toggle-translate
+          >
+            <Icon name="mdi:translate" class="w-5 h-5" />
           </button>
           <a
             href={githubUrl}

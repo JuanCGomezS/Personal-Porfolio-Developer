@@ -29,6 +29,13 @@ const {} = Astro.props;
       classList.toggle("dark");
       localStorage.theme = classList.contains("dark") ? "dark" : "light";
     });
+
+    attachEvent("[data-aw-toggle-translate]", "click", function (elem) {
+      classList.toggle("es");
+      localStorage.translate = classList.contains("es") ? "es" : "en";
+      document.cookie = classList.toggle("es") ? "translate=es; path=/" : "translate=en; path=/";
+      location.reload();
+    });
   };
   window.onpageshow = function () {
     const elem = document.querySelector("[data-aw-toggle-menu]");

@@ -1,0 +1,66 @@
+{
+  "about": {
+    "title": "About Juan Gomez",
+    "description": "Sometimes I write code. Other times, I rewrite code until it works perfectly.",
+    "present": {
+      "name": "Full stack developer",
+      "content": "As a software developer, my integrity and discipline are complemented by an entrepreneurial mindset. My ability to work as a team is balanced with a constant desire to learn and grow. i am passionate about personal improvement and self-study every day."
+    },
+    "seepdf": "See pdf",
+    "item1": "EDUCATION",
+    "item2": "WORK EXPERIENCE",
+    "work": {
+      "synergias": {
+        "name": "Full Stack Developer / Synergias",
+        "date": "Jul 2023 - Currently",
+        "content": "In my role, I use the Scrum methodology and develop the backend with the .NET framework in C#. For the frontend, I use React and SQLServer for database management."
+      },
+      "cpr": {
+        "name": "Full Stack Developer / CPR Servicios y Consultoría SAS",
+        "date": "Sep 2021 - Jul 2023",
+        "content": "At CPR, I used frameworks such as Angular, Node.js, and .NET, with languages like JavaScript, TypeScript, HTML, and SCSS. I used design libraries like Angular Material, DevExtreme, and Bootstrap, and MySQL databases. I also worked with tools like AWS (S3, EC2), Jenkins, SonarQube, Jira, HeidiSql, and Slack."
+      },
+      "solredes": {
+        "name": "Web Developer / Solredes SAS",
+        "date": "Aug 2020 - Sep 2021",
+        "content": "I focused primarily on frontend development. During this period, I worked with a variety of frameworks and programming languages, including JSF, Angular, React and Flutter, as well as Java, JavaScript, TypeScript, HTML, XHTML, CSS and SCSS. In addition, I used design libraries such as Angular Material, PrimeNG, PrimeFaces and PrimeReact, and databases such as MySql, PostgreSQL and Oracle."
+      }
+    },
+    "education": {
+      "ing": {
+        "name": "Ingeniería Telemática",
+        "date": "2021 - Currently",
+        "content": "Universidad Distrital Francisco José de Caldas \n Currently working on a degree project"
+      },
+      "c_react": {
+        "name": "Certificacion React.js"
+      },
+      "c_angular": {
+        "name": "Certificación Autenticación con Angular"
+      },
+      "c_scrum": {
+        "name": "Certificación Curso Profesional de Scrum"
+      },
+      "tec": {
+        "name": "Tecnólogo en Sistematización de Datos",
+        "content": "Universidad Distrital Francisco José de Caldas"
+      },
+      "sena": {
+        "name": "Técnico en contabilidad"
+      }
+    },
+    "titleTecno": "TECHNOLOGY",
+    "skills": "Skills"
+  },
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "index": {
+    "title": "Hey there 👋",
+    "subtitle": "I'm Juan Carlos Gomez",
+    "description": "I am in my last semester of telematics engineering at Universidad Distrital, I am a passionate and dedicated software developer focused on web development."
+  }
+}

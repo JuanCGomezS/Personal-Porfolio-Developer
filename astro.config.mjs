@@ -38,4 +38,5 @@ export default defineConfig({
     rehypePlugins: [[rehypePrettyCode, options]],
     //remarkPlugins: [remarkReadingTime],
   },
+  output: "server",
 });
