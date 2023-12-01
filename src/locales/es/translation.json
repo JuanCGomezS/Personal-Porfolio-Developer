@@ -4,7 +4,7 @@
     "description": "A veces escribo código. Otras veces, reescribo el código hasta que funciona perfectamente.",
     "present": {
       "name": "Desarrollador Full Stack",
-      "content": "Como desarrollador de software, mi integridad y disciplina se complementan con una mentalidad emprendedora. Mi capacidad para trabajar en equipo se equilibra con un constante deseo de aprender y crecer. me apasiona la mejora personal y estudio por mi cuenta todos los días."
+      "content": "Como desarrollador de software, mi integridad y disciplina se complementan con una mentalidad emprendedora. La gran capacidad para trabajar en equipo se equilibra con un constante deseo de aprender y crecer. Me apasiona crecimiento personal y el estudio de manera autónoma. Actualmente, Soy Tecnólogo en Sistematización de Datos y me encuentro desarrollando la Tesis para obtener el título de Ingeniería Telemática en la Universidad Distrital de Bogotá."
     },
     "seepdf": "Ver pdf",
     "item1": "ESTUDIOS",
@@ -13,7 +13,7 @@
       "synergias": {
         "name": "Desarrollador Full Stack / Synergias",
         "date": "Jul 2023 - Actualmente",
-        "content": "En mi rol, uso la metodología Scrum y desarrollé el backend con el framework .NET en C#. Para el frontend, uso React y SQLServer para la gestión de la base de datos."
+        "content": "Actualmente, en mi cargo trabajo con el equipo de desarrollo bajo la metodología Scrum, haciendo uso de herramientas como Jira y la suite de Microsoft Office, en la parte del Backend se trabaja con el framework .NET en C#, en el lado del frontend se hace uso de React y SQLServer para la gestión de la base de datos. Aquí debo desarrollar nuevos módulos, dar soporte a los ya realizados tanto en. Net como en React, además debo crear scripts de base de datos dependiendo el requerimiento."
       },
       "cpr": {
         "name": "Desarrollador Full Stack / CPR Servicios y Consultoría SAS",
@@ -31,6 +31,9 @@
         "name": "Ingeniería Telemática",
         "date": "2021 - Actualmente",
         "content": "Universidad Distrital Francisco José de Caldas \n Actualmente trabajando en un proyecto de grado"
+      },
+      "c_nodeJS": {
+        "name": "Certificación Autenticación, Microservicios y Redis con NodeJS"
       },
       "c_react": {
         "name": "Certificación React.js"
@@ -61,6 +64,6 @@
   "index": {
     "title": "Hola 👋",
     "subtitle": "Soy Juan Carlos Gómez",
-    "description": "Estoy cursando el último semestre de ingeniería telemática en la Universidad Distrital, soy un apasionado y dedicado desarrollador de software enfocado en el desarrollo web."
+    "description": "Soy un apasionado y dedicado desarrollador de software enfocado en el desarrollo web."
   }
 }
