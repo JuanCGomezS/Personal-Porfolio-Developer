@@ -208,14 +208,11 @@ if (showHeaderAndFooter == undefined) {
                   <figcaption class="text-right">{step.date}</figcaption>
                   <div class="">
                     <p class="text-gray-600 mb-8 dark:text-slate-400">{step.content}</p>
-                    <a href={step.url} target="_blank">
-                      {step.url && (
-                        <button class="flex items-center bg-transparent">
-                          <i class="mdi mdi-magnify w-6 h-6 text-gray-600 dark:text-slate-200" />
-                          <Icon name="carbon:task-view" class="w-5 h-5" />
-                        </button>
-                      )}
-                    </a>
+                    {step.url && (
+                      <button id={`showImageButton${index}`}>
+                        <Icon name="carbon:task-view" class="w-5 h-5" />
+                      </button>
+                    )}
                   </div>
                   <div class="flex flex-col items-center">
                     <a href={step.url} target="_blank" class="mt-4">
@@ -316,8 +313,8 @@ if (showHeaderAndFooter == undefined) {
 
 <script>
   function toggleImage(index: any) {
-    const showImageButton = document.getElementById(`showImageButton${index}`);
-    const myImage = document.getElementById(`myImage${index}`);
+    const showImageButton = document.querySelector(`#showImageButton${index}`) as HTMLElement;
+    const myImage = document.querySelector(`#myImage${index}`) as HTMLElement;
 
     if (showImageButton !== null) {
       showImageButton.addEventListener("click", function () {
