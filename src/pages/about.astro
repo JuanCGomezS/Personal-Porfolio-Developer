@@ -311,14 +311,14 @@ if (showHeaderAndFooter == undefined) {
   }
 </style>
 
-<script>
-  function toggleImage(index: any) {
-    const showImageButton = document.querySelector(`#showImageButton${index}`) as HTMLElement;
-    const myImage = document.querySelector(`#myImage${index}`) as HTMLElement;
+<script is:inline>
+  function toggleImage(index) {
+    const showImageButton = document.querySelector(`#showImageButton${index}`);
+    const myImage = document.querySelector(`#myImage${index}`);
 
-    if (showImageButton !== null) {
+    if (showImageButton !== null && showImageButton instanceof HTMLElement) {
       showImageButton.addEventListener("click", function () {
-        if (myImage !== null) {
+        if (myImage !== null && myImage instanceof HTMLElement) {
           if (myImage.style.display === "none") {
             myImage.style.display = "block";
           } else {
