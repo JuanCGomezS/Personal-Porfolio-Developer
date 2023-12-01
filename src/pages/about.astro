@@ -63,6 +63,7 @@ const stepsStudies = [
     date: "2023",
     content: "Platzi",
     url: "https://docsdeveloper.s3.amazonaws.com/node.pdf",
+    img: "https://docsdeveloper.s3.amazonaws.com/certificados/node.jpg",
   },
   {
     icon: "mdi:book-account",
@@ -70,6 +71,7 @@ const stepsStudies = [
     date: "2023",
     content: "Platzi",
     url: "https://docsdeveloper.s3.amazonaws.com/react.pdf",
+    img: "https://docsdeveloper.s3.amazonaws.com/certificados/react.jpg",
   },
   {
     icon: "mdi:book-account",
@@ -77,6 +79,7 @@ const stepsStudies = [
     date: "2023",
     content: "Platzi",
     url: "https://docsdeveloper.s3.amazonaws.com/angular-autenticacion.pdf",
+    img: "https://docsdeveloper.s3.amazonaws.com/certificados/angular.jpg",
   },
   {
     icon: "mdi:book-account",
@@ -84,13 +87,15 @@ const stepsStudies = [
     date: "2023",
     content: "Platzi",
     url: "https://docsdeveloper.s3.amazonaws.com/scrum.pdf",
+    img: "https://docsdeveloper.s3.amazonaws.com/certificados/scrum.jpg",
   },
   {
     icon: "mdi:book-account",
     name: i18n.t("about.education.tec.name"),
     date: "2016 - 2021",
-    url: "https://docsdeveloper.s3.amazonaws.com/diploma_tecno.pdf",
     content: "Universidad Distrital Francisco José de Caldas",
+    url: "https://docsdeveloper.s3.amazonaws.com/diploma_tecno.pdf",
+    img: "https://docsdeveloper.s3.amazonaws.com/certificados/diploma.jpg",
   },
   {
     icon: "mdi:book-account",
@@ -183,7 +188,7 @@ if (showHeaderAndFooter == undefined) {
         <div class="md:pr-16 text-gray-700 dark:text-gray-400">
           <p class="mb-2 text-xl font-bold text-gray-900 dark:text-slate-300">{item1}</p>
           {
-            stepsStudies.map((step) => (
+            stepsStudies.map((step, index) => (
               <div class="flex pr-8">
                 <div class="flex flex-col items-center mr-4">
                   <div>
@@ -201,15 +206,24 @@ if (showHeaderAndFooter == undefined) {
                     {step.name}
                   </p>
                   <figcaption class="text-right">{step.date}</figcaption>
-                  <p class="text-gray-600 mb-8 dark:text-slate-400">{step.content}</p>
-                  <a href={step.url} target="_blank">
+                  <div class="">
+                    <p class="text-gray-600 mb-8 dark:text-slate-400">{step.content}</p>
                     {step.url && (
-                      <button class="flex items-center bg-transparent">
-                        <i class="mdi mdi-magnify w-6 h-6 text-gray-600 dark:text-slate-200" />
-                        {seePdf}
+                      <button id={`showImageButton${index}`}>
+                        <Icon name="carbon:task-view" class="w-5 h-5" />
                       </button>
                     )}
-                  </a>
+                  </div>
+                  <div class="flex flex-col items-center">
+                    <a href={step.url} target="_blank" class="mt-4">
+                      <img
+                        id={`myImage${index}`}
+                        src={`${step.img}`}
+                        style="display: none;"
+                        class="mt-4 rounded-lg shadow-md"
+                      />
+                    </a>
+                  </div>
                 </div>
               </div>
             ))
@@ -296,3 +310,26 @@ if (showHeaderAndFooter == undefined) {
     }
   }
 </style>
+
+<script>
+  function toggleImage(index: any) {
+    const showImageButton = document.getElementById(`showImageButton${index}`);
+    const myImage = document.getElementById(`myImage${index}`);
+
+    if (showImageButton !== null) {
+      showImageButton.addEventListener("click", function () {
+        if (myImage !== null) {
+          if (myImage.style.display === "none") {
+            myImage.style.display = "block";
+          } else {
+            myImage.style.display = "none";
+          }
+        }
+      });
+    }
+  }
+
+  for (let i = 0; i <= 5; i++) {
+    toggleImage(i);
+  }
+</script>
