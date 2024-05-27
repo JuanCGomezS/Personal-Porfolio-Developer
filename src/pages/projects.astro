@@ -15,6 +15,45 @@ let { showHeaderAndFooter } = Astro.props;
 if (showHeaderAndFooter == undefined) {
   showHeaderAndFooter = true;
 }
+
+const projects = [
+  {
+    title: "Sales management",
+    description:
+      "This web application was created to solve the problem of lack of control over products and sales in a supermarket. Management cannot know for sure whether there are still units of a product or the total sales made in a day.",
+    technologies: [
+      "Backend:.NET 6 - SQL Server",
+      "Frontend: Angular 16 - Bootstrap - Angular Material",
+    ],
+    images: ["project-angular-net.png", "project-angular-net.png"],
+    links: [
+      {
+        type: "Github",
+        url: "https://github.com/JuanCGomezS/technical-test-net",
+      },
+    ],
+  },
+  {
+    title: "VS Color Extension",
+    description:
+      "This project is a custom theme for Visual Studio Code. It was built from the ground up and is designed to be easy on the eyes and easy to use.",
+    technologies: [
+      "yo code - vsce (to create the extension)",
+      "Azure - VS Marketplace (to publish the extension)",
+    ],
+    images: ["project-vs-dark.png", "project-vs-white.png"],
+    links: [
+      {
+        type: "Github",
+        url: "https://github.com/JuanCGomezS/extension-vs",
+      },
+      {
+        type: "Download",
+        url: "https://marketplace.visualstudio.com/items?itemName=JCcolors.jc-extension",
+      },
+    ],
+  },
+];
 ---
 
 <PageLayout meta={{ title, description, canonical }}>
@@ -28,235 +67,78 @@ if (showHeaderAndFooter == undefined) {
       </header>
     </section>
 
-    <section class="p-4">
-      <div class="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div>
-          <div class="text-lg">
-            <h3
-              class="font-bold dark:text-white text-2xl mb-2 sm:text-3xl tracking-tight capitalize"
-            >
-              Sales management
-            </h3>
-          </div>
+    {
+      projects.map((project) => (
+        <section class="p-4">
+          <div class="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <div class="text-lg">
+                <h3 class="font-bold dark:text-white text-2xl mb-2 sm:text-3xl tracking-tight capitalize">
+                  {project.title}
+                </h3>
+              </div>
 
-          <div class="flex mt-8">
-            <div class="flex-shrink-0">
-              <div class="flex items-center justify-center h-6">
-                <Icon name="mdi:package-variant-closed" class="w-5 h-5" />
+              <div class="flex mt-8">
+                <div class="flex-shrink-0">
+                  <div class="flex items-center justify-center h-6">
+                    <Icon name="mdi:package-variant-closed" class="w-5 h-5" />
+                  </div>
+                </div>
+                <div class="ml-4">
+                  <h3 class="font-medium dark:text-white leading-6 text-lg">Description</h3>
+                  <p class="text-muted mt-2">{project.description}</p>
+                </div>
+              </div>
+
+              <div class="flex mt-4">
+                <div class="flex-shrink-0">
+                  <div class="flex items-center justify-center h-6">
+                    <Icon name="ic:outline-highlight" class="w-5 h-5" />
+                  </div>
+                </div>
+                <div class="ml-4">
+                  <h3 class="font-medium dark:text-white leading-6 text-lg">Technologies</h3>
+                  {project.technologies.map((tech) => (
+                    <p class="text-muted mt-2">{tech}</p>
+                  ))}
+                </div>
+              </div>
+
+              <div class="flex mt-4">
+                <div class="flex-shrink-0">
+                  <div class="flex items-center justify-center h-6">
+                    <Icon name="ic:baseline-open-in-new" class="w-5 h-5" />
+                  </div>
+                </div>
+                <div class="ml-4">
+                  <h3 class="font-medium dark:text-white leading-6 text-lg">Links</h3>
+                  <div class="flex items-center mt-2">
+                    {project.links.flatMap((link, index) => [
+                      <a class="text-muted block cursor-pointer" href={link.url}>
+                        {link.type}
+                      </a>,
+                      index < project.links.length - 1 && ", ",
+                    ])}
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="ml-4">
-              <h3 class="font-medium dark:text-white leading-6 text-lg">Description</h3>
-              <p class="text-muted mt-2">
-                This web application was created to solve the problem of lack of control over
-                products and sales in a supermarket. Management cannot know for sure whether there
-                are still units of a product or the total sales made in a day.
-              </p>
+
+            <div>
+              {project.images.map((image, i) => (
+                <img
+                  class={`opacity-90 rounded-lg shadow-lg ${
+                    i === 0 ? "dark:hidden" : "hidden dark:block"
+                  }`}
+                  src={`/img/${image}`}
+                  alt="Logo"
+                />
+              ))}
             </div>
           </div>
-
-          <div class="flex mt-4">
-            <div class="flex-shrink-0">
-              <div class="flex items-center justify-center h-6">
-                <Icon name="ic:outline-highlight" class="w-5 h-5" />
-              </div>
-            </div>
-            <div class="ml-4">
-              <h3 class="font-medium dark:text-white leading-6 text-lg">Technologies</h3>
-              <p class="text-muted mt-2">Backend: .NET 6 - SQL Server</p>
-              <p class="text-muted mt-2">Frontend: Angular 16 - Bootstrap - Angular Material</p>
-            </div>
-          </div>
-
-          <div class="flex mt-4">
-            <div class="flex-shrink-0">
-              <div class="flex items-center justify-center h-6">
-                <Icon name="ic:baseline-open-in-new" class="w-5 h-5" />
-              </div>
-            </div>
-            <div class="ml-4">
-              <h3 class="font-medium dark:text-white leading-6 text-lg">Links</h3>
-              <div class="flex items-center mt-2">
-                <a
-                  class="text-muted block cursor-pointer"
-                  href="https://github.com/JuanCGomezS/technical-test-net"
-                  target="_blank"
-                >
-                  Github
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <img
-            class="opacity-90 rounded-lg shadow-lg"
-            src="/img/project-angular-net.png"
-            alt="Logo"
-          />
-        </div>
-      </div>
-    </section>
-
-    <section class="p-4">
-      <div class="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div>
-          <div class="text-lg">
-            <h3
-              class="font-bold dark:text-white text-2xl mb-2 sm:text-3xl tracking-tight capitalize"
-            >
-              VS Color Extension
-            </h3>
-          </div>
-
-          <div class="flex mt-8">
-            <div class="flex-shrink-0">
-              <div class="flex items-center justify-center h-6">
-                <Icon name="mdi:package-variant-closed" class="w-5 h-5" />
-              </div>
-            </div>
-            <div class="ml-4">
-              <h3 class="font-medium dark:text-white leading-6 text-lg">Description</h3>
-              <p class="text-muted mt-2">
-                This project is a custom theme for Visual Studio Code. It was built from the ground
-                up and is designed to be easy on the eyes and easy to use.
-              </p>
-            </div>
-          </div>
-
-          <div class="flex mt-4">
-            <div class="flex-shrink-0">
-              <div class="flex items-center justify-center h-6">
-                <Icon name="ic:outline-highlight" class="w-5 h-5" />
-              </div>
-            </div>
-            <div class="ml-4">
-              <h3 class="font-medium dark:text-white leading-6 text-lg">Technologies</h3>
-              <p class="text-muted mt-2">yo code - vsce (to create the extension)</p>
-              <p class="text-muted mt-2">Azure - VS Marketplace (to publish the extension)</p>
-            </div>
-          </div>
-
-          <div class="flex mt-4">
-            <div class="flex-shrink-0">
-              <div class="flex items-center justify-center h-6">
-                <Icon name="ic:baseline-open-in-new" class="w-5 h-5" />
-              </div>
-            </div>
-            <div class="ml-4">
-              <h3 class="font-medium dark:text-white leading-6 text-lg">Links</h3>
-              <div class="flex items-center mt-2">
-                <a
-                  class="text-muted block cursor-pointer"
-                  href="https://github.com/JuanCGomezS/extension-vs"
-                >
-                  Github
-                </a>
-                <span class="mx-2">·</span>
-                <a
-                  class="text-muted block cursor-pointer"
-                  href="https://marketplace.visualstudio.com/items?itemName=JCcolors.jc-extension"
-                >
-                  Download
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <img
-            class="opacity-90 rounded-lg shadow-lg hidden dark:block"
-            src="/img/project-vs-white.png"
-            alt="Logo"
-          />
-          <img
-            class="opacity-90 rounded-lg shadow-lg dark:hidden"
-            src="/img/project-vs-dark.png"
-            alt="Logo"
-          />
-        </div>
-      </div>
-    </section>
-
-    <section class="p-4">
-      <div class="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div>
-          <div class="text-lg">
-            <h3
-              class="font-bold dark:text-white text-2xl mb-2 sm:text-3xl tracking-tight capitalize"
-            >
-              Professional Portfolio
-            </h3>
-          </div>
-
-          <div class="flex mt-8">
-            <div class="flex-shrink-0">
-              <div class="flex items-center justify-center h-6">
-                <Icon name="mdi:package-variant-closed" class="w-5 h-5" />
-              </div>
-            </div>
-            <div class="ml-4">
-              <h3 class="font-medium dark:text-white leading-6 text-lg">Description</h3>
-              <p class="text-muted mt-2">
-                This is my professional portfolio, a place where you can learn more about me, my
-                work and my skills as a developer.
-              </p>
-            </div>
-          </div>
-
-          <div class="flex mt-4">
-            <div class="flex-shrink-0">
-              <div class="flex items-center justify-center h-6">
-                <Icon name="ic:outline-highlight" class="w-5 h-5" />
-              </div>
-            </div>
-            <div class="ml-4">
-              <h3 class="font-medium dark:text-white leading-6 text-lg">Technologies</h3>
-              <p class="text-muted mt-2">Astro - React</p>
-              <p class="text-muted mt-2">tailwind</p>
-            </div>
-          </div>
-
-          <div class="flex mt-4">
-            <div class="flex-shrink-0">
-              <div class="flex items-center justify-center h-6">
-                <Icon name="ic:baseline-open-in-new" class="w-5 h-5" />
-              </div>
-            </div>
-            <div class="ml-4">
-              <h3 class="font-medium dark:text-white leading-6 text-lg">Links</h3>
-              <div class="flex items-center mt-2">
-                <a class="text-muted block cursor-pointer" href="https://juancgomezs.github.io/">
-                  Website
-                </a>
-                <span class="mx-2">·</span>
-                <a
-                  class="text-muted block cursor-pointer"
-                  href="https://github.com/JuanCGomezS/juancgomezs.github.io"
-                >
-                  Github
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <img
-            class="opacity-90 rounded-lg shadow-lg dark:hidden"
-            src="/img/project-portfolio-dark.png"
-            alt="Logo"
-          />
-          <img
-            class="opacity-90 rounded-lg shadow-lg hidden dark:block"
-            src="/img/project-portfolio-white.png"
-            alt="Logo"
-          />
-        </div>
-      </div>
-    </section>
+        </section>
+      ))
+    }
   </main>
   {showHeaderAndFooter && <Footer />}
 </PageLayout>
